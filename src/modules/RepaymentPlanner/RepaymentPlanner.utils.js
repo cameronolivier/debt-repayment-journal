@@ -1,9 +1,9 @@
 import Big from 'big.js'
 
-const getMonthlyRate = (annualRate) => Big(annualRate).div(12).add(1)
-const getNewOutstandingAmount = (amount, monthlyRate, installment) => Big(amount).times(monthlyRate).minus(installment)
-const formatAsCurrencyValue = (amount) => Big(amount).toFixed(2).toString()
-const getRemainder = (installment, amount) => Big(installment).minus(amount).toFixed(2).toString()
+export const getMonthlyRate = (annualRate) => Big(annualRate).div(12).add(1).toString()
+export const getNewOutstandingAmount = (amount, monthlyRate, installment) => Big(amount).times(monthlyRate).minus(installment).toString()
+export const formatAsCurrencyValue = (amount) => Big(amount).toFixed(2).toString()
+export const getRemainder = (installment, amount) => Big(installment).minus(amount).toFixed(2).toString()
 
 export const generateRepaymentSchedule = ({ amount, annualRate, installment }) => {
   let _amount = Big(amount)
@@ -20,6 +20,12 @@ export const generateRepaymentSchedule = ({ amount, annualRate, installment }) =
     }
   }
 
+  const data = {
+    amount: Big(amount).toFixed(2).toString(),
+    annualRate: Big(annualRate).toFixed(2).toString(),
+    installment: Big(installment).toFixed(2).toString(),
+  }
+
   const remainder = getRemainder(installment, _amount)
-  return {repayments, remainder}
+  return { data, repayments, remainder }
 }

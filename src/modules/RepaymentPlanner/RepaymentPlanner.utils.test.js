@@ -1,7 +1,30 @@
 import * as SUT from './RepaymentPlanner.utils'
 
 describe('modules/RepaymentPlanner/RepaymentPlanner.utils', () => {
-
+  describe('getMonthlyRate', () => {
+    it('should return the monthly rate', () => {
+      const result = SUT.getMonthlyRate(0.12)
+      expect(result).toBe('1.01')
+    })
+  })
+  describe('getNewOutstandingAmount', () => {
+    it('should return the monthly rate', () => {
+      const result = SUT.getNewOutstandingAmount(100, 1.10, 10)
+      expect(result).toBe('100')
+    })
+  })
+  describe('formatAsCurrencyValue', () => {
+    it('should return the monthly rate', () => {
+      const result = SUT.formatAsCurrencyValue(10.1234)
+      expect(result).toBe('10.12')
+    })
+  })
+  describe('getRemainder', () => {
+    it('should return the monthly rate', () => {
+      const result = SUT.getRemainder(100, 50)
+      expect(result).toBe('50.00')
+    })
+  })
   describe('generateRepaymentSchedule', () => {
     it('should return expected title', () => {
       const expected = {
