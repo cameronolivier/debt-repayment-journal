@@ -6,7 +6,7 @@ const RepaymentPlanner = () => {
   // TODO: Install intl for number formatting
 
   const debts = [
-    {amount: 60000, annualRate: 0.17, installment: 2700},
+    {amount: 100, annualRate: 0.12, installment: 10},
     {amount: 75000, annualRate: 0.15, installment: 2100},
     {amount: 100000, annualRate: 0.12, installment: 2900},
   ]
@@ -15,8 +15,8 @@ const RepaymentPlanner = () => {
 
   return (
     <div>
-      {debtSchedules.map( debt => (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', margin: '0 20px' }}>
+      {debtSchedules.map( (debt, j) => (
+        <div key={j.toString + (debt.remainder)} style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', margin: '0 20px' }}>
           {debt.repayments.map(
             (payment, i) => (
               <div key={i*payment} style={{ border:'1px solid grey', margin: '4px', padding: '10px' }}>

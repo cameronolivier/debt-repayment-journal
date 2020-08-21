@@ -2,21 +2,32 @@
   "name": "debt-calculator",
   "version": "0.1.0",
   "private": true,
+  "author": "Cameron Olivier <cameronolivier@gmail.com>",
+  "contributors": [
+    "Cameron Olivier <cameronolivier@gmail.com>"
+  ],
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
+    "@testing-library/react-hooks": "^3.4.1",
     "@testing-library/user-event": "^7.2.1",
+    "babel-jest": "^24.9.0",
+    "jest-each": "^26.4.0",
     "big.js": "^5.2.2",
     "ramda": "^0.27.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "prettier": "^2.0.5",
+    "react-test-renderer": "^16.13.1"
   },
   "eslintConfig": {
     "extends": "react-app"
